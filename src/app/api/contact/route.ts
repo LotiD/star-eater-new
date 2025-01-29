@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     console.error('Erreur lors de la soumission du formulaire:', error)
     return NextResponse.json(
       { success: false, error: 'Une erreur est survenue' },
-      { status: 500 }
+      { status: 500 } // tout ça doit être fait côté serveur avec useActionState dans src/app/action.ts, validation faite côté client
     )
   }
-} 
+}
