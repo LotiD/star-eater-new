@@ -1,8 +1,10 @@
 'use client'
 
 import Link from 'next/link'
+
 import Image from 'next/image'
 import { useEffect } from 'react'
+
 
 export default function Home() {
   useEffect(() => {
@@ -48,6 +50,7 @@ export default function Home() {
           </div>
         </section>
 
+
         {/* À propos Section */}
         <section className="h-screen snap-start flex items-center">
           <div className="container mx-auto px-4">
@@ -62,6 +65,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
         {/* Valeurs Section */}
         <section className="h-screen snap-start bg-gray-100 flex items-center">
@@ -82,6 +86,7 @@ export default function Home() {
                   <p className="text-black">Nous donnons vie aux idées les plus audacieuses.</p>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
