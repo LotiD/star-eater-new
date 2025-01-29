@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -28,8 +28,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12 text-black">Notre Mission</h2>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-lg mb-8 text-black">
-              En tant qu'auteurs d'ebooks, nous créons des contenus qui inspirent, éduquent et divertissent. 
-              Notre expertise s'étend de la fiction aux guides pratiques, en passant par le développement personnel.
+              En tant qu&apos;auteurs d&apos;ebooks, nous créons des contenus qui inspirent, éduquent et divertissent. 
+              Notre expertise s&apos;étend de la fiction aux guides pratiques, en passant par le développement personnel.
             </p>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <h3 className="text-xl font-semibold mb-4 text-black">Persévérance</h3>
-              <p className="text-black">Nous ne reculons devant aucun défi pour atteindre l'excellence.</p>
+              <p className="text-black">Nous ne reculons devant aucun défi pour atteindre l&apos;excellence.</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <h3 className="text-xl font-semibold mb-4 text-black">Innovation</h3>
