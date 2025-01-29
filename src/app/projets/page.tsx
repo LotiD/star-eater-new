@@ -2,44 +2,53 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { PrismaClient } from '@prisma/client'
 
-const projects = [
-  {
-    id: 1,
-    title: "Battle of the End",
-    category: "Roman de fiction",
-    year: "2024",
-    synopsis: "Bla bla bla",
-    image: "/placeholder.jpg",
-    slug: "battle-of-the-end"
-  },
-  {
-    id: 2,
-    title: "Moi, étudiant, je veux être en forme",
-    category: "Essai Pratique",
-    year: "2025",
-    synopsis: "Bla bla bla",
-    image: "/placeholder.jpg",
-    slug: "etudiant-en-forme"
-  },
-  {
-    id: 3,
-    title: "Reprogrammer votre Esprit : Développez une Mentalité de Croissance et Transformez Votre Vie",
-    category: "Essai Pratique",
-    year: "2025",
-    synopsis: "Bla bla bla",
-    image: "/placeholder.jpg",
-    slug: "reprogrammer-esprit"
-  }
-]
+interface Project {
+  id: number
+  title: string
+  category: string
+  year: number
+  synopsis: string
+  image: string
+  slug: string
+}
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Tous')
+  const [projects, setProjects] = useState<Project[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('/api/projects')
+        const data = await response.json()
+        if (data.success) {
+          setProjects(data.projects)
+        }
+      } catch (error) {
+        console.error('Erreur lors du chargement des projets:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchProjects()
+  }, [])
 
   const filteredProjects = projects.filter(project => 
     selectedCategory === 'Tous' ? true : project.category === selectedCategory
   )
+
+  if (loading) {
+    return (
+      <div className="min-h-screen py-16 flex items-center justify-center">
+        <div className="text-xl text-gray-600">Chargement des projets...</div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen py-16">

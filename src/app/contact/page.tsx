@@ -1,39 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { useActionState } from 'react'
+import { submitContact } from './actions'
+
+const initialState = {
+  message: '',
+  success: false
+}
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        setStatus('success')
-        setFormData({ name: '', email: '', message: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch (error) {
-      console.error('Erreur lors de l\'envoi du formulaire:', error)
-      setStatus('error')
-    }
-  }
+  const [state, formAction] = useActionState(submitContact, initialState)
 
   return (
     <div className="min-h-screen py-16">
@@ -41,19 +17,17 @@ export default function Contact() {
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12">Contactez-nous</h1>
           
-          {status === 'success' && (
-            <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-md">
-              Message envoyé avec succès !
+          {state.message && (
+            <div className={`mb-6 p-4 rounded-md ${
+              state.success 
+                ? 'bg-green-100 text-green-700' 
+                : 'bg-red-100 text-red-700'
+            }`}>
+              {state.message}
             </div>
           )}
 
-          {status === 'error' && (
-            <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-md">
-              Une erreur est survenue. Veuillez réessayer.
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form action={formAction} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Nom
@@ -61,11 +35,9 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
+                name="name"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                disabled={status === 'loading'}
               />
             </div>
 
@@ -76,11 +48,9 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
+                name="email"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                disabled={status === 'loading'}
               />
             </div>
 
@@ -90,21 +60,18 @@ export default function Contact() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 required
                 rows={6}
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                disabled={status === 'loading'}
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-purple-900 text-white py-3 px-6 rounded-md hover:bg-purple-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={status === 'loading'}
+              className="w-full bg-purple-900 text-white py-3 px-6 rounded-md hover:bg-purple-800 transition-colors"
             >
-              {status === 'loading' ? 'Envoi en cours...' : 'Envoyer'}
+              Envoyer
             </button>
           </form>
 
