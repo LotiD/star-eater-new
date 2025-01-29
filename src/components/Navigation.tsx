@@ -41,19 +41,19 @@ export default function Navigation() {
           <div className="hidden md:flex space-x-8">
             <Link 
               href="/" 
-              className="text-gray-600 hover:text-purple-900 transition-colors"
+              className="text-black hover:text-purple-900 transition-colors"
             >
               Accueil
             </Link>
             <Link 
               href="/projets" 
-              className="text-gray-600 hover:text-purple-900 transition-colors"
+              className="text-black hover:text-purple-900 transition-colors"
             >
               Projets
             </Link>
             <Link 
               href="/contact" 
-              className="text-gray-600 hover:text-purple-900 transition-colors"
+              className="text-black hover:text-purple-900 transition-colors"
             >
               Contact
             </Link>
@@ -66,21 +66,21 @@ export default function Navigation() {
             <div className="flex flex-col space-y-4">
               <Link 
                 href="/" 
-                className="text-gray-600 hover:text-purple-900 transition-colors"
+                className="text-black hover:text-purple-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Accueil
               </Link>
               <Link 
                 href="/projets" 
-                className="text-gray-600 hover:text-purple-900 transition-colors"
+                className="text-black hover:text-purple-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Projets
               </Link>
               <Link 
                 href="/contact" 
-                className="text-gray-600 hover:text-purple-900 transition-colors"
+                className="text-black hover:text-purple-900 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

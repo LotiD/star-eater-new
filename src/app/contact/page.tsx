@@ -15,7 +15,7 @@ export default function Contact() {
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12">Contactez-nous</h1>
+          <h1 className="text-4xl font-bold text-center mb-12 text-black">Contactez-nous</h1>
           
           {state.message && (
             <div className={`mb-6 p-4 rounded-md ${
@@ -29,7 +29,7 @@ export default function Contact() {
 
           <form action={formAction} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium mb-1 text-black">
                 Nom
               </label>
               <input
@@ -37,12 +37,12 @@ export default function Contact() {
                 id="name"
                 name="name"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-black"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium mb-1 text-black">
                 Email
               </label>
               <input
@@ -50,12 +50,12 @@ export default function Contact() {
                 id="email"
                 name="email"
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-black"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium mb-1 text-black">
                 Message
               </label>
               <textarea
@@ -63,7 +63,7 @@ export default function Contact() {
                 name="message"
                 required
                 rows={6}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent text-black"
               />
             </div>
 
@@ -76,8 +76,8 @@ export default function Contact() {
           </form>
 
           <div className="mt-12 text-center">
-            <h2 className="text-2xl font-bold mb-4">Autres moyens de nous contacter</h2>
-            <p className="text-gray-600">
+            <h2 className="text-2xl font-bold mb-4 text-black">Autres moyens de nous contacter</h2>
+            <p className="text-black">
               Email: contact@stareater.com<br />
               Téléphone: +33 1 23 45 67 89<br />
               Adresse: 123 Rue de la Fiction, 75000 Paris

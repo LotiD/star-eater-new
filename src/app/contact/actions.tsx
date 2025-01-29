@@ -4,7 +4,12 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
-export async function submitContact(prevState: any, formData: FormData) {
+interface ContactState {
+  message: string
+  success: boolean
+}
+
+export async function submitContact(_prevState: ContactState, formData: FormData) {
   try {
     const name = formData.get('name') as string
     const email = formData.get('email') as string

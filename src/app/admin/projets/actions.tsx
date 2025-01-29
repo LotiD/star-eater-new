@@ -5,6 +5,12 @@ import { revalidatePath } from 'next/cache'
 
 const prisma = new PrismaClient()
 
+interface ProjectState {
+  message: string
+  success: boolean
+  project?: any
+}
+
 export async function getProjects() {
   try {
     const projects = await prisma.project.findMany({
@@ -19,7 +25,7 @@ export async function getProjects() {
   }
 }
 
-export async function createProject(formData: FormData) {
+export async function createProject(prevState: ProjectState, formData: FormData) {
   try {
     const project = await prisma.project.create({
       data: {
@@ -32,10 +38,17 @@ export async function createProject(formData: FormData) {
       }
     })
     revalidatePath('/admin/projets')
-    return { success: true, project }
+    return { 
+      success: true, 
+      message: 'Projet créé avec succès',
+      project 
+    }
   } catch (error) {
     console.error('Erreur lors de la création du projet:', error)
-    return { success: false, error: 'Une erreur est survenue' }
+    return { 
+      success: false, 
+      message: 'Une erreur est survenue lors de la création du projet'
+    }
   }
 }
 

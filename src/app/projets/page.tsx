@@ -45,7 +45,7 @@ export default function Projects() {
   if (loading) {
     return (
       <div className="min-h-screen py-16 flex items-center justify-center">
-        <div className="text-xl text-gray-600">Chargement des projets...</div>
+        <div className="text-xl text-black">Chargement des projets...</div>
       </div>
     )
   }
@@ -53,7 +53,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12">Nos Projets</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-black">Nos Projets</h1>
         
         {/* Filtres */}
         <div className="mb-8 flex justify-center gap-4">
@@ -104,9 +104,9 @@ export default function Projects() {
                 </div>
                 <div className="p-6">
                   <span className="text-sm text-purple-600 font-semibold">{project.category}</span>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-purple-900">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.synopsis}</p>
-                  <span className="text-sm text-gray-500">Année : {project.year}</span>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-purple-900 text-black">{project.title}</h3>
+                  <p className="mb-4 text-black">{project.synopsis}</p>
+                  <span className="text-sm text-black">Année : {project.year}</span>
                 </div>
               </div>
             </Link>
@@ -115,7 +115,7 @@ export default function Projects() {
 
         {/* Message si aucun projet */}
         {filteredProjects.length === 0 && (
-          <div className="text-center text-gray-600 mt-8">
+          <div className="text-center mt-8 text-black">
             Aucun projet ne correspond à cette catégorie.
           </div>
         )}
