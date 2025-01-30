@@ -141,7 +141,7 @@ export default function AdminProjects() {
 
           <form action={formAction} className="space-y-6">
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-xl font-medium mb-1 text-black">
                 Titre
               </label>
               <input
@@ -155,7 +155,7 @@ export default function AdminProjects() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-xl font-medium mb-1 text-black">
                 Catégorie
               </label>
               <select
@@ -170,7 +170,7 @@ export default function AdminProjects() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-xl font-medium mb-1 text-black">
                 Année
               </label>
               <input
@@ -184,7 +184,7 @@ export default function AdminProjects() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-xl font-medium mb-1 text-black">
                 Synopsis
               </label>
               <textarea
@@ -198,7 +198,7 @@ export default function AdminProjects() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-xl font-medium mb-1 text-black">
                 Image URL
               </label>
               <input
@@ -212,7 +212,7 @@ export default function AdminProjects() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1 text-black">
+              <label className="block text-xl font-medium mb-1 text-black">
                 Slug (généré automatiquement)
               </label>
               <input
@@ -226,7 +226,7 @@ export default function AdminProjects() {
 
             <button
               type="submit"
-              className="w-full bg-purple-900 text-white py-3 px-6 rounded-md hover:bg-purple-800 transition-colors"
+              className="w-full bg-purple-900 text-white text-2xl py-3 px-6 rounded-md hover:bg-purple-800 transition-colors"
             >
               Ajouter le projet
             </button>
@@ -243,7 +243,8 @@ export default function AdminProjects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    fill
+                    layout="fill"
+                    objectFit="contain"
                     className="object-cover rounded-md"
                   />
                 </div>

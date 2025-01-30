@@ -1,6 +1,6 @@
 'use server'
 
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Project } from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 
 const prisma = new PrismaClient()
@@ -8,7 +8,7 @@ const prisma = new PrismaClient()
 interface ProjectState {
   message: string
   success: boolean
-  project?: any
+  project?: Project
 }
 
 export async function getProjects() {

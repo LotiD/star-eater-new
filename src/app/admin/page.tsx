@@ -50,7 +50,7 @@ export default function AdminLogin() {
 
         <form action={formAction} className="mt-8 space-y-6">
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-black">
+            <label htmlFor="username" className="block text-xl font-medium text-black">
               Identifiant
             </label>
             <input
@@ -63,7 +63,7 @@ export default function AdminLogin() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-black">
+            <label htmlFor="password" className="block text-xl font-medium text-black">
               Mot de passe
             </label>
             <input
@@ -77,7 +77,7 @@ export default function AdminLogin() {
 
           <button
             type="submit"
-            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-white bg-purple-900 hover:bg-purple-800"
+            className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-white text-2xl bg-purple-900 hover:bg-purple-800"
           >
             Se connecter
           </button>

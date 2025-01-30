@@ -18,7 +18,8 @@ export default async function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    fill
+                    layout="fill"
+                    objectFit="contain"
                     className="object-cover"
                   />
                 </div>
