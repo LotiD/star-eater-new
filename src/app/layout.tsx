@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito_Sans } from 'next/font/google';
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito_sans = Nunito_Sans({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700'],
+  variable: '--font-nunito-sans'
+})
 
 export const metadata: Metadata = {
   title: "STAR EATER - Agence d'Ebooks",
@@ -16,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
-      <body className={inter.className}>
+    <html lang="fr" className={`${nunito_sans.variable}`}>
+      <body className="font-sans">
         <ClientLayout>
           {children}
         </ClientLayout>
