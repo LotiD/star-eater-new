@@ -3,11 +3,11 @@ import { getProjectBySlug } from '@/services/projectsService'
 import { notFound } from 'next/navigation'
 
 interface ProjectProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export default async function ProjectDetails({ params }: ProjectProps) {
-  const project = await getProjectBySlug(params.slug)
+  const project = await getProjectBySlug((await params).slug)
 
   if (!project) {
     return notFound() // Affiche une 404 si le projet n'existe pas

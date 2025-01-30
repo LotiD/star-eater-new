@@ -64,15 +64,6 @@ export default function AdminProjects() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    const form = new FormData()
-    Object.entries(formData).forEach(([key, value]) => {
-      form.append(key, value.toString())
-    })
-    formAction(form)
-  }
-
   const handleDelete = async (id: number) => {
     if (!confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')) return
 

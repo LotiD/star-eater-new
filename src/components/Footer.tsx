@@ -45,7 +45,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-white mt-8 pt-6 text-center text-white text-sm">
-          © {new Date().getFullYear()} MonSite. Tous droits réservés.
+          © {new Date().getFullYear()} Star Eater - Tous droits réservés.
         </div>
       </div>
     </footer>
