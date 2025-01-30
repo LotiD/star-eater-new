@@ -16,6 +16,9 @@ export default function Contact() {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold text-center mt-9 mb-12 text-black">Contactez-nous</h1>
+          <p className="text-xl text-black text-center mb-8">
+                Envoyez nous vos suggestions, votre avis sur nos ebooks. 
+              </p>
           
           {state.message && (
             <div className={`mb-6 p-4 rounded-md ${
@@ -29,7 +32,7 @@ export default function Contact() {
 
           <form action={formAction} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-md font-medium mb-1 text-black">
+              <label htmlFor="name" className="block text-xl font-medium mb-6 text-black">
                 Nom
               </label>
               <input
@@ -42,7 +45,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-md font-medium mb-1 text-black">
+              <label htmlFor="email" className="block text-xl font-medium mb-1 text-black">
                 Email
               </label>
               <input
@@ -55,7 +58,7 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-md font-medium mb-1 text-black">
+              <label htmlFor="message" className="block text-xl font-medium mb-6 text-black">
                 Message
               </label>
               <textarea

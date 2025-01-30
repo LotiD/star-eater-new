@@ -1,6 +1,7 @@
 'use client'
 
 import Navigation from "@/components/Navigation"
+import Footer from "@/components/Footer"
 import { usePathname } from "next/navigation"
 
 export default function ClientLayout({
@@ -10,6 +11,8 @@ export default function ClientLayout({
 }) {
   const pathname = usePathname()
   const isAdmin = pathname?.startsWith('/admin')
+  
+  const isHome = pathname?.endsWith('/')
 
   return (
     <>
@@ -17,6 +20,7 @@ export default function ClientLayout({
       <main className="min-h-screen bg-gray-50">
         {children}
       </main>
+      {!isAdmin && !isHome && <Footer />}
     </>
   )
 } 

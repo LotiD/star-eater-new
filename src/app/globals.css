@@ -51,12 +51,10 @@ body {
 /* Styles pour la page d'accueil uniquement */
 .home-container {
   height: 100vh;
-  overflow: hidden;
 }
 
 .home-content {
   height: 100vh;
-  overflow-y: auto;
   scroll-snap-type: y mandatory;
 }
 
