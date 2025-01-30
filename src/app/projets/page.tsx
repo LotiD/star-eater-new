@@ -8,7 +8,7 @@ export default async function Projects() {
   return (
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12 text-black">Nos Projets</h1>
+        <h1 className="text-4xl font-bold text-center mt-9 mb-12 text-black font-sans">Nos Projets</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
@@ -26,7 +26,7 @@ export default async function Projects() {
                   <span className="text-sm text-purple-600 font-semibold">{project.category}</span>
                   <h3 className="text-xl font-bold mb-2 group-hover:text-purple-900 text-black">{project.title}</h3>
                   <p className="mb-4 text-black">{project.synopsis}</p>
-                  <span className="text-sm text-black">Année : {project.year}</span>
+                  <span className="text-sm text-black"><strong>Année :</strong> {project.year}</span>
                 </div>
               </div>
             </Link>
