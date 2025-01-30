@@ -32,7 +32,7 @@ export default function AdminLogin() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-md">
-        <div className="flex justify-between items-center">
+        <div className="flex-row gap-4 items-center">
           <h1 className="text-3xl font-bold text-black">Administration</h1>
           <Link 
             href="/"
