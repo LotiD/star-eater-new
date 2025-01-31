@@ -27,13 +27,15 @@ Ainsi, ce choix technique répond donc à un double objectif : améliorer la ré
 
 Nom du projet : Star Eater
 
-URL du site : [https://star-eater-new-2-k9e7sh3xn-lotids-projects.vercel.app/](https://star-eater-new-2-k9e7sh3xn-lotids-projects.vercel.app/)
+URL du Vercel : [https://star-eater-new-2-k9e7sh3xn-lotids-projects.vercel.app/](https://star-eater-new-2-k9e7sh3xn-lotids-projects.vercel.app/)
 
-Analysé : 30/01/2025 à 16h37 avec pageSpeed Insight
+URL du site web : [https://star-eater-new-2.vercel.app/](https://star-eater-new-2.vercel.app/)
+
+Analysé : le 30/01/2025 à 16h37 avec pageSpeed Insight
 
 ![image.png](image.png)
 
-Les performance du site sont moyennes.
+Les performances du site sont moyennes.
 
 ![image.png](image%201.png)
 
@@ -46,7 +48,7 @@ Cela peut s’expliquer assez facilement.
 
 Nous avons utilisé des images assez lourds en background de la hero section et de la values section dans la page accueil bien qu’elles soient en webp par contre on a pas mis de lazy loading ni de preload.
 
-On a pas assez optimisé les fichier css et js.
+On a pas assez optimisé les fichiers css et js.
 
 TBT
 
